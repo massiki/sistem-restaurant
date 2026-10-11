@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { StatusBadge } from "@/components/status-badge";
 import { BrandLogo } from "@/components/brand-logo";
+import { SignOutButton } from "@/components/sign-out-button";
 import { rupiah, restaurant } from "@/lib/mock-data";
 import { useStore } from "@/lib/store";
 import type { KitchenStatus, Order } from "@/lib/types";
@@ -248,6 +249,8 @@ export function KitchenScreen() {
               <span className="tnum">{counts.READY}</span> siap
             </span>
           </div>
+
+          <SignOutButton />
         </div>
 
         {/* Station filter */}

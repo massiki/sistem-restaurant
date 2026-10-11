@@ -20,7 +20,11 @@ Pada fase PRD ini, sistem hanya berfokus pada **frontend prototype**. Backend, d
 
 ---
 
+
+
 # 2. Product Goals
+
+
 
 ## 2.1 Primary Goals
 
@@ -32,6 +36,8 @@ Pada fase PRD ini, sistem hanya berfokus pada **frontend prototype**. Backend, d
 6. Membuat UI responsive untuk customer dan staff.
 7. Menggunakan reusable components dan struktur kode yang mudah dikembangkan menjadi aplikasi full-stack.
 
+
+
 ## 2.2 Secondary Goals
 
 - Menjadi portfolio project web developer.
@@ -41,31 +47,11 @@ Pada fase PRD ini, sistem hanya berfokus pada **frontend prototype**. Backend, d
 
 ---
 
-# 3. Non-Goals
 
-Pada fase ini sistem **tidak** mencakup:
-
-- Database production.
-- Prisma ORM.
-- PostgreSQL integration.
-- Authentication backend.
-- Authorization backend.
-- Payment gateway.
-- QR payment.
-- WebSocket.
-- Supabase.
-- Redis.
-- Email/SMS notification.
-- Printer integration.
-- Hardware POS integration.
-- Inventory synchronization dengan backend.
-- Real transaction processing.
-
-Semua data menggunakan mock data dan local/frontend state.
-
----
 
 # 4. Target Users
+
+
 
 ## 4.1 Customer
 
@@ -83,6 +69,8 @@ Kebutuhan utama:
 - Melihat status order.
 - Meminta bill.
 
+
+
 ## 4.2 Kitchen Staff
 
 Staff dapur yang menerima dan memproses pesanan.
@@ -96,6 +84,8 @@ Kebutuhan utama:
 - Melihat waktu order.
 - Menandai order sebagai ready.
 
+
+
 ## 4.3 Cashier
 
 Staff kasir yang menangani pembayaran.
@@ -108,6 +98,8 @@ Kebutuhan utama:
 - Melihat total bill.
 - Memilih metode pembayaran.
 - Menyelesaikan pembayaran.
+
+
 
 ## 4.4 Admin/Manager
 
@@ -127,6 +119,8 @@ Kebutuhan utama:
 - Mengelola shift.
 
 ---
+
+
 
 # 5. Core Business Concept
 
@@ -168,7 +162,11 @@ Konsep ini harus tercermin dalam UI walaupun backend belum tersedia.
 
 ---
 
+
+
 # 6. Product Experience
+
+
 
 ## 6.1 Customer Experience
 
@@ -196,6 +194,8 @@ Track Order
 Request Bill
 ```
 
+
+
 ## 6.2 Kitchen Experience
 
 ```text
@@ -209,6 +209,8 @@ Ready
     ↓
 Completed
 ```
+
+
 
 ## 6.3 Cashier Experience
 
@@ -229,6 +231,8 @@ Complete Payment
     ↓
 Payment Success
 ```
+
+
 
 ## 6.4 Admin Experience
 
@@ -254,15 +258,23 @@ View Reports
 
 ---
 
+
+
 # 7. Functional Requirements
 
+
+
 # 7.1 Customer Ordering
+
+
 
 ### Route
 
 ```text
 /order/table/[token]
 ```
+
+
 
 ### Requirements
 
@@ -281,6 +293,8 @@ Customer harus dapat:
 - Menambahkan produk ke cart.
 - Melihat cart summary.
 
+
+
 ### UI Components
 
 - Restaurant Header.
@@ -295,7 +309,11 @@ Customer harus dapat:
 
 ---
 
+
+
 # 7.2 Product Detail
+
+
 
 ### Requirements
 
@@ -310,6 +328,8 @@ Product detail harus menampilkan:
 - Quantity.
 - Special notes.
 - Total calculated price.
+
+
 
 ### Example
 
@@ -339,13 +359,19 @@ Quantity
 
 ---
 
+
+
 # 7.3 Customer Cart
+
+
 
 ### Route
 
 ```text
 /order/cart
 ```
+
+
 
 ### Requirements
 
@@ -370,6 +396,8 @@ Customer dapat:
 - Menambahkan notes.
 - Melakukan checkout/order.
 
+
+
 ### Primary CTA
 
 ```text
@@ -378,13 +406,19 @@ Place Order
 
 ---
 
+
+
 # 7.4 Order Confirmation
+
+
 
 ### Route
 
 ```text
 /order/success
 ```
+
+
 
 ### Requirements
 
@@ -415,13 +449,19 @@ Estimated time
 
 ---
 
+
+
 # 7.5 Order Tracking
+
+
 
 ### Route
 
 ```text
 /order/[orderId]
 ```
+
+
 
 ### Requirements
 
@@ -436,6 +476,8 @@ PREPARING
 READY
 COMPLETED
 ```
+
+
 
 ### UI
 
@@ -466,6 +508,8 @@ Tambahkan:
 
 ---
 
+
+
 # 7.6 Request Bill
 
 Customer dapat menekan:
@@ -482,6 +526,8 @@ Sistem menampilkan confirmation dialog.
 Request Bill
 ```
 
+
+
 ### Confirmation
 
 ```text
@@ -489,6 +535,8 @@ Are you sure you want to request your bill?
 
 [Cancel] [Request Bill]
 ```
+
+
 
 ### After Request
 
@@ -509,7 +557,11 @@ PAID
 
 ---
 
+
+
 # 8. Kitchen Display System
+
+
 
 ### Route
 
@@ -569,6 +621,8 @@ TABLE A01
 [Accept]
 ```
 
+
+
 ## 8.3 Kitchen Interactions
 
 Staff dapat:
@@ -594,13 +648,19 @@ Tambahkan:
 
 ---
 
+
+
 # 9. Cashier / POS
+
+
 
 ### Route
 
 ```text
 /staff/cashier
 ```
+
+
 
 ## 9.1 Table Panel
 
@@ -626,6 +686,8 @@ Available
 A03
 Waiting Payment
 ```
+
+
 
 ## 9.2 Bill Panel
 
@@ -660,7 +722,11 @@ Rp87.000
 
 ---
 
+
+
 # 10. Payment Interface
+
+
 
 ### Requirements
 
@@ -673,6 +739,8 @@ Payment methods:
 - Debit Card.
 - Credit Card.
 - E-Wallet.
+
+
 
 ## Cash Flow
 
@@ -708,7 +776,11 @@ Rp87.000
 
 ---
 
+
+
 # 11. Table Management
+
+
 
 ### Route
 
@@ -732,6 +804,8 @@ Example:
 └──────────┘
 ```
 
+
+
 ## Requirements
 
 Admin dapat:
@@ -748,7 +822,11 @@ Admin dapat:
 
 ---
 
+
+
 # 12. QR Management
+
+
 
 ### Route
 
@@ -775,13 +853,19 @@ Gunakan dummy QR code pada fase frontend.
 
 ---
 
+
+
 # 13. Menu Management
+
+
 
 ### Route
 
 ```text
 /admin/menu
 ```
+
+
 
 ## Requirements
 
@@ -811,7 +895,11 @@ Add Product
 
 ---
 
+
+
 # 14. Product Editor
+
+
 
 ### Route
 
@@ -848,7 +936,11 @@ Spicy Level
 
 ---
 
+
+
 # 15. Category Management
+
+
 
 ### Route
 
@@ -877,7 +969,11 @@ Paket
 
 ---
 
+
+
 # 16. Inventory Dashboard
+
+
 
 ### Route
 
@@ -885,12 +981,16 @@ Paket
 /admin/inventory
 ```
 
+
+
 ## KPI
 
 - Total Ingredients.
 - Low Stock.
 - Out of Stock.
 - Inventory Value.
+
+
 
 ## Inventory Table
 
@@ -918,7 +1018,11 @@ Low stock harus memiliki visual warning.
 
 ---
 
+
+
 # 17. Supplier Management
+
+
 
 ### Route
 
@@ -944,13 +1048,19 @@ Actions:
 
 ---
 
+
+
 # 18. Order Management
+
+
 
 ### Route
 
 ```text
 /admin/orders
 ```
+
+
 
 ## Filters
 
@@ -959,6 +1069,8 @@ Actions:
 - This week.
 - This month.
 - Custom date.
+
+
 
 ## Status
 
@@ -970,6 +1082,8 @@ Ready
 Completed
 Cancelled
 ```
+
+
 
 ## Table
 
@@ -989,7 +1103,11 @@ Klik order untuk membuka detail.
 
 ---
 
+
+
 # 19. Payment Management
+
+
 
 ### Route
 
@@ -1016,7 +1134,11 @@ Filter:
 
 ---
 
+
+
 # 20. Sales Dashboard
+
+
 
 ### Route
 
@@ -1033,7 +1155,11 @@ Dashboard harus menjadi halaman utama admin.
 - Average Order Value.
 - Active Tables.
 
+
+
 ## Charts
+
+
 
 ### Revenue
 
@@ -1043,6 +1169,8 @@ Line/area chart:
 Revenue over time
 ```
 
+
+
 ### Orders
 
 Bar chart:
@@ -1050,6 +1178,8 @@ Bar chart:
 ```text
 Orders over time
 ```
+
+
 
 ### Best Sellers
 
@@ -1060,6 +1190,8 @@ Bar chart/list:
 2. Dimsum
 3. Es Teh
 ```
+
+
 
 ### Sales by Category
 
@@ -1072,6 +1204,8 @@ Dimsum
 Snack
 ```
 
+
+
 ### Payment Methods
 
 Chart:
@@ -1082,6 +1216,8 @@ QRIS
 Debit
 E-Wallet
 ```
+
+
 
 ## Recent Orders
 
@@ -1098,7 +1234,11 @@ Time
 
 ---
 
+
+
 # 21. Staff Management
+
+
 
 ### Route
 
@@ -1132,7 +1272,11 @@ Actions:
 
 ---
 
+
+
 # 22. Shift Management
+
+
 
 ### Route
 
@@ -1158,6 +1302,8 @@ Close Shift
 ```
 
 ---
+
+
 
 # 23. Admin Navigation
 
@@ -1198,7 +1344,11 @@ Tambahkan:
 
 ---
 
+
+
 # 24. Responsive Requirements
+
+
 
 ## Customer
 
@@ -1210,6 +1360,8 @@ Customer interface harus:
 - Touch-friendly controls.
 - Tidak memiliki horizontal overflow.
 - Image menu optimal untuk mobile.
+
+
 
 ## Staff
 
@@ -1223,7 +1375,11 @@ Staff interface harus:
 
 ---
 
+
+
 # 25. Design System
+
+
 
 ## Design Principles
 
@@ -1237,6 +1393,8 @@ Staff interface harus:
 - Clear hierarchy.
 - Fast visual scanning.
 
+
+
 ## UI Library
 
 Gunakan:
@@ -1244,6 +1402,8 @@ Gunakan:
 - Tailwind CSS.
 - shadcn/ui.
 - Lucide Icons.
+
+
 
 ## Components
 
@@ -1267,6 +1427,8 @@ Gunakan reusable:
 - Pagination.
 
 ---
+
+
 
 # 26. Color and Status System
 
@@ -1293,6 +1455,8 @@ Tambahkan:
 - Shape/badge.
 
 ---
+
+
 
 # 27. Mock Data Requirements
 
@@ -1345,6 +1509,8 @@ maka harus muncul di Kitchen sebagai preparing.
 
 ---
 
+
+
 # 28. Frontend State Simulation
 
 Walaupun belum menggunakan backend, frontend harus terasa interaktif.
@@ -1365,6 +1531,8 @@ Success Page
 Tracking Page
 ```
 
+
+
 ## Kitchen
 
 ```text
@@ -1377,6 +1545,8 @@ PREPARING
 READY
 ```
 
+
+
 ## Cashier
 
 ```text
@@ -1388,6 +1558,8 @@ Process Payment
  ↓
 Payment Success
 ```
+
+
 
 ## Table
 
@@ -1404,6 +1576,8 @@ AVAILABLE
 Gunakan React state/context atau state management sederhana jika diperlukan.
 
 ---
+
+
 
 # 29. Route Structure
 
@@ -1441,6 +1615,8 @@ Gunakan struktur:
 ```
 
 ---
+
+
 
 # 30. Component Architecture
 
@@ -1488,6 +1664,8 @@ components/
 
 ---
 
+
+
 # 31. TypeScript Domain Types
 
 Buat type/interface untuk domain utama:
@@ -1517,6 +1695,8 @@ Gunakan type tersebut untuk mock data agar struktur frontend konsisten.
 
 ---
 
+
+
 # 32. Accessibility
 
 UI harus memperhatikan:
@@ -1533,6 +1713,8 @@ UI harus memperhatikan:
 Customer harus tetap dapat memahami status order walaupun tidak membedakan warna.
 
 ---
+
+
 
 # 33. Loading States
 
@@ -1551,6 +1733,8 @@ Kitchen Skeleton
 Gunakan fake delay jika diperlukan untuk demo.
 
 ---
+
+
 
 # 34. Empty States
 
@@ -1575,6 +1759,8 @@ Try changing your filter.
 
 ---
 
+
+
 # 35. Error States
 
 Buat UI error sederhana untuk:
@@ -1597,6 +1783,8 @@ Please try again.
 
 ---
 
+
+
 # 36. Notifications
 
 Gunakan toast notification untuk:
@@ -1610,6 +1798,8 @@ Gunakan toast notification untuk:
 - Product availability changed.
 
 ---
+
+
 
 # 37. Demo Scenarios
 
@@ -1637,6 +1827,8 @@ Order #ORD-001 created
 Track Order
 ```
 
+
+
 ## Scenario B — Kitchen
 
 ```text
@@ -1650,6 +1842,8 @@ Preparing
     ↓
 Ready
 ```
+
+
 
 ## Scenario C — Cashier
 
@@ -1666,6 +1860,8 @@ Select QRIS
     ↓
 Payment successful
 ```
+
+
 
 ## Scenario D — Admin
 
@@ -1687,7 +1883,11 @@ Open inventory
 
 ---
 
+
+
 # 38. Acceptance Criteria
+
+
 
 ## Customer
 
@@ -1704,6 +1904,8 @@ Open inventory
 - [ ] Customer dapat melihat status order.
 - [ ] Customer dapat request bill.
 
+
+
 ## Kitchen
 
 - [ ] Kitchen dapat melihat order baru.
@@ -1714,6 +1916,8 @@ Open inventory
 - [ ] Kitchen dapat melihat timer.
 - [ ] Kitchen dapat melakukan filtering.
 
+
+
 ## Cashier
 
 - [ ] Cashier dapat melihat meja.
@@ -1723,6 +1927,8 @@ Open inventory
 - [ ] Cashier dapat melihat total bill.
 - [ ] Cashier dapat memilih payment method.
 - [ ] Cashier dapat menyelesaikan mock payment.
+
+
 
 ## Admin
 
@@ -1739,6 +1945,8 @@ Open inventory
 - [ ] Admin dapat mengelola shift.
 
 ---
+
+
 
 # 39. Future Backend Scope
 
@@ -1793,6 +2001,8 @@ Payment Gateway
 
 ---
 
+
+
 # 40. Future Database Scope
 
 Database yang akan digunakan pada fase backend:
@@ -1804,12 +2014,16 @@ restaurants
 branches
 ```
 
+
+
 ### Table
 
 ```text
 dining_tables
 table_sessions
 ```
+
+
 
 ### Menu
 
@@ -1821,6 +2035,8 @@ modifier_groups
 modifiers
 ```
 
+
+
 ### Order
 
 ```text
@@ -1829,12 +2045,16 @@ order_items
 order_item_modifiers
 ```
 
+
+
 ### Kitchen
 
 ```text
 kitchen_orders
 kitchen_order_items
 ```
+
+
 
 ### Payment
 
@@ -1844,6 +2064,8 @@ payments
 discounts
 order_discounts
 ```
+
+
 
 ### Inventory
 
@@ -1856,6 +2078,8 @@ purchase_orders
 purchase_order_items
 ```
 
+
+
 ### Staff
 
 ```text
@@ -1865,6 +2089,8 @@ permissions
 role_permissions
 shifts
 ```
+
+
 
 ### Finance/System
 
@@ -1877,7 +2103,11 @@ audit_logs
 
 ---
 
+
+
 # 41. Development Phases
+
+
 
 ## Phase 1 — Design System
 
@@ -1889,6 +2119,8 @@ audit_logs
 - Setup responsive behavior.
 - Setup reusable components.
 
+
+
 ## Phase 2 — Customer
 
 - QR/table page.
@@ -1899,6 +2131,8 @@ audit_logs
 - Order tracking.
 - Request bill.
 
+
+
 ## Phase 3 — Kitchen
 
 - KDS.
@@ -1907,6 +2141,8 @@ audit_logs
 - Timer.
 - Filters.
 
+
+
 ## Phase 4 — Cashier
 
 - Table grid.
@@ -1914,6 +2150,8 @@ audit_logs
 - Bill.
 - Payment UI.
 - Payment success.
+
+
 
 ## Phase 5 — Admin
 
@@ -1929,6 +2167,8 @@ audit_logs
 - Staff.
 - Shifts.
 
+
+
 ## Phase 6 — Polish
 
 - Loading states.
@@ -1938,6 +2178,8 @@ audit_logs
 - Responsive testing.
 - Accessibility.
 - UX refinement.
+
+
 
 ## Phase 7 — Backend
 
@@ -1954,6 +2196,8 @@ Future phase:
 - Realtime.
 
 ---
+
+
 
 # 42. Definition of Done — Frontend Prototype
 
@@ -1973,6 +2217,8 @@ Frontend prototype dianggap selesai apabila:
 12. Tidak ada dependency terhadap backend/database.
 
 ---
+
+
 
 # 43. Final Product Vision
 

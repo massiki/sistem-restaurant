@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { restaurant } from "@/lib/mock-data";
 import { BrandLogo } from "@/components/brand-logo";
+import { SignOutButton } from "@/components/sign-out-button";
 import { cn } from "@/lib/utils";
 
 const groups: {
@@ -56,7 +57,13 @@ const groups: {
   },
 ];
 
-export function AdminShell({ children }: { children: React.ReactNode }) {
+export function AdminShell({
+  children,
+  identity,
+}: {
+  children: React.ReactNode;
+  identity?: React.ReactNode;
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -113,13 +120,16 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         </div>
       ))}
 
-      <div className="mt-auto rounded-lg bg-sidebar-accent p-3">
-        <p className="text-xs font-bold text-sidebar-accent-foreground">
-          Cabang Senopati
-        </p>
-        <p className="mt-0.5 text-[11px] text-sidebar-foreground/60">
-          Dewi Anggraini · Admin
-        </p>
+      <div className="mt-auto space-y-2.5 rounded-lg bg-sidebar-accent p-3">
+        <div>
+          <p className="text-xs font-bold text-sidebar-accent-foreground">
+            Cabang Senopati
+          </p>
+          <p className="mt-0.5 text-[11px] text-sidebar-foreground/60">
+            {identity ?? "Admin"}
+          </p>
+        </div>
+        <SignOutButton className="w-full" />
       </div>
     </nav>
   );

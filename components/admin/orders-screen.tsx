@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { ClipboardList, Search } from "lucide-react";
 import { StatusBadge } from "@/components/status-badge";
+import { SignOutButton } from "@/components/sign-out-button";
 import { TimeLabel } from "@/components/time-label";
 import { rupiah } from "@/lib/mock-data";
 import { useStore } from "@/lib/store";
@@ -35,11 +36,14 @@ export function OrdersScreen() {
 
   return (
     <div className="space-y-5">
-      <div>
-        <h1 className="font-heading text-2xl font-extrabold">Orders</h1>
-        <p className="text-sm text-muted-foreground">
-          Semua pesanan lintas meja, satu sumber kebenaran dengan dapur &amp; kasir.
-        </p>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h1 className="font-heading text-2xl font-extrabold">Orders</h1>
+          <p className="text-sm text-muted-foreground">
+            Semua pesanan lintas meja, satu sumber kebenaran dengan dapur &amp; kasir.
+          </p>
+        </div>
+        <SignOutButton />
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
